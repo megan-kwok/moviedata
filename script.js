@@ -6,40 +6,123 @@ const getData = async (url, params) => {
   }
 };
 
-//  iframe.src = https://www.youtube.com/embed/${trailer}
+get.addEventListener('click', async (_event) => {
+  selectElement = document.querySelector('#Movies');
+  output = selectElement.options[selectElement.selectedIndex].value;
+  if (output == 'dead apple') {
+    const movieData = await getMovies1();
+    console.log(movieData)
+    callMovies(movieData)
+  }
+  if (output == 'the maze runner') {
+    const movieData = await getMovies2();
+    console.log(movieData)
+    callMovies(movieData)
+  }
+  if (output == 'better days') {
+    const movieData = await getMovies3();
+    console.log(movieData)
+    callMovies(movieData)
+  }
+  if (output == 'gotf') {
+    const movieData = await getMovies4();
+    console.log(movieData)
+    callMovies(movieData)
+  }
+  if (output == '20thcengirl') {
+    const movieData = await getMovies5();
+    console.log(movieData)
+    callMovies(movieData)
+  }
+  if (output == 'jtcote') {
+    const movieData = await getMovies6();
+    console.log(movieData)
+    callMovies(movieData)
+  }
+  if (output == 'your eyes tell') {
+    const movieData = await getMovies7();
+    console.log(movieData)
+    callMovies(movieData)
+  }
+  if (output == 'fairy tail') {
+    const movieData = await getMovies8();
+    console.log(movieData)
+    callMovies(movieData)
+  }
+  if (output == 'jurassic park') {
+    const movieData = await getMovies9();
+    console.log(movieData)
+    callMovies(movieData)
+  }
+  if (output == 'enola holmes 2') {
+    const movieData = await getMovies10();
+    console.log(movieData)
+    callMovies(movieData)
+  }
+});
+
+// 26ca7d300d9e397095fa7e1435f5eb3d
 
 function callMovies(movieData) {
   document.getElementById('div').innerHTML = "";
 
+  const img1 = document.createElement("img");
+  img1.src = 'https://image.tmdb.org/t/p/w500' + movieData['poster_path'];
+  img1.setAttribute('id', 'img1');
+  document.getElementById('div').appendChild(img1);
+
+  const title = document.createElement("h2");
+  title.innerHTML = movieData["title"];
+  title.setAttribute("id", "title");
+  document.getElementById("div").appendChild(title);
+
+  const overview = document.createElement("p");
+  overview.innerHTML = 'Overview: ' + movieData['overview'];
+  overview.setAttribute('id', 'overview');
+  document.getElementById('div').appendChild(overview);
+  
   const runtime = document.createElement("p")
-  runtime.innerHTML = 'Runtime:' + movieData ['runtime']
+  runtime.innerHTML = 'Runtime: ' + movieData ['runtime'];
   runtime.setAttribute('id', 'runtime');
   document.getElementById('div').appendChild(runtime);
 
-  const overview = document.createElement("p");
-  overview.innerHTML = 'Overview' + movieData['overview'];
-  overview.setAttribute('id', 'overview');
-  document.getElementById('div').appendChild(overview);
+  const release_date = document.createElement ("p")
+  release_date.innerHTML = 'Release Date: ' + movieData ['release_date'];
+  release_date.setAttribute('id' , 'release_date');
+  document.getElementById('div').appendChild(release_date);
 
-  const img = document.createElement("img");
-  img.src = 'https://image.tmdb.org/t/p/w500' + movieData['poster_path'];
-  img.setAttribute('id', 'img');
-  document.getElementById('div').appendChild(img);
-  console.log(movieData['poster_path'])
+  const popularity = document.createElement("p");
+  popularity.innerHTML = 'Popularity: ' + movieData["popularity"];
+  popularity.setAttribute("id", "popularity");
+  document.getElementById("div").appendChild(popularity);
 
-  const original_title = document.createElement("h1");
-  original_title.innerHTML = movieData['original_title'];
-  original_title.setAttribute('id', 'movietitle');
-};
+  const budget = document.createElement('p');
+  budget.innerHTML = 'Budget: ' + movieData ["budget"];
+  budget.setAttribute('id' , 'budget');
+  document.getElementById('div').appendChild(budget);
+
+  const vote_average = document.createElement('p');
+  vote_average.innerHTML = "Vote Average: " + movieData ['vote_average'];
+  vote_average.setAttribute('id' , 'vote_average');
+  document.getElementById('div').appendChild(vote_average);
+
+  const original_language = document.createElement("p");
+  original_language.innerHTML = "Official Language: " + movieData["original_language"];
+  original_language.setAttribute('id', 'original_language');
+  document.getElementById('div').appendChild(original_language);
+
+  const img2 = document.createElement("img");
+  img2.src = 'https://image.tmdb.org/t/p/w500' + movieData['backdrop_path'];
+  img2.setAttribute('id', 'img2');
+  document.getElementById('div').appendChild(img2);
+}
 
 const getMovies1 = async () => {
   const movieData = await getData("https://api.themoviedb.org/3/movie/483455", {
     params: {
       api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-      query: "dead apple",
       append_to_response: "videos",
     }
-
   });
   return movieData.data;
 }
@@ -51,10 +134,10 @@ const getMovies2 = async () => {
       query: "the maze runner",
       append_to_response: "videos",
     }
-
   });
   return movieData.data;
 }
+
 const getMovies3 = async () => {
   const movieData = await getData("https://api.themoviedb.org/3/movie/575813", {
     params: {
@@ -133,68 +216,13 @@ const getMovies9 = async () => {
   return movieData.data;
 }
 const getMovies10 = async () => {
-  const movieData = await getData("https://api.themoviedb.org/3/movie/280", {
+  const movieData = await getData("https://api.themoviedb.org/3/movie/497582", {
     params: {
       api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-      query: "terminator",
+      query: "enola holmes 2",
       append_to_response: "videos",
     }
 
   });
   return movieData.data;
 }
-
-get.addEventListener('click', async (_event) => {
-  selectElement = document.querySelector('#Movies');
-  output = selectElement.options[selectElement.selectedIndex].value;
-  if (output == 'dead apple') {
-    const movieData = await getMovies1();
-    console.log(movieData)
-    callMovies(movieData)
-  }
-  if (output == 'the maze runner') {
-    const movieData = await getMovies2();
-    console.log(movieData)
-    callMovies(movieData)
-  }
-  if (output == 'better days') {
-    const movieData = await getMovies3();
-    console.log(movieData)
-    callMovies(movieData)
-  }
-  if (output == 'gotf') {
-    const movieData = await getMovies4();
-    console.log(movieData)
-    callMovies(movieData)
-  }
-  if (output == '20thcengirl') {
-    const movieData = await getMovies5();
-    console.log(movieData)
-    callMovies(movieData)
-  }
-  if (output == 'jtcote') {
-    const movieData = await getMovies6();
-    console.log(movieData)
-    callMovies(movieData)
-  }
-  if (output == 'your eyes tell') {
-    const movieData = await getMovies7();
-    console.log(movieData)
-    callMovies(movieData)
-  }
-  if (output == 'fairy tail') {
-    const movieData = await getMovies8();
-    console.log(movieData)
-    callMovies(movieData)
-  }
-  if (output == 'jurassic park') {
-    const movieData = await getMovies9();
-    console.log(movieData)
-    callMovies(movieData)
-  }
-  if (output == 'terminator') {
-    const movieData = await getMovies10();
-    console.log(movieData)
-    callMovies(movieData)
-  }
-});
