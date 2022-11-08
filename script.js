@@ -66,11 +66,6 @@ get.addEventListener('click', async (_event) => {
 function callMovies(movieData) {
   document.getElementById('div').innerHTML = "";
 
-  const img1 = document.createElement("img");
-  img1.src = 'https://image.tmdb.org/t/p/w500' + movieData['poster_path'];
-  img1.setAttribute('id', 'img1');
-  document.getElementById('div').appendChild(img1);
-
   const title = document.createElement("h2");
   title.innerHTML = movieData["title"];
   title.setAttribute("id", "title");
@@ -110,6 +105,11 @@ function callMovies(movieData) {
   original_language.innerHTML = "Official Language: " + movieData["original_language"];
   original_language.setAttribute('id', 'original_language');
   document.getElementById('div').appendChild(original_language);
+
+  const img1 = document.createElement("img");
+  img1.src = 'https://image.tmdb.org/t/p/w500' + movieData['poster_path'];
+  img1.setAttribute('id', 'img1');
+  document.getElementById('div').appendChild(img1);
 
   const img2 = document.createElement("img");
   img2.src = 'https://image.tmdb.org/t/p/w500' + movieData['backdrop_path'];

@@ -7,3 +7,91 @@
 body {
     background-color: rgb(143, 72, 139);
 }
+
+.container > .header {
+    width: 500px;
+    margin-left: 30%;
+    text-align: center;
+    font-family: 'rubik bubbles' , serif;
+    font-size: 40px;
+    color: white;
+  }
+   
+  #get {
+    width: 500px;
+    margin-left: 30%;
+    padding: 5px;
+    color: rgb(85, 49, 81);
+    border-color: purple;
+    border-radius: 10px;
+    font-family: 'short stack' , serif;
+  }
+   
+  #Movies {
+    width: 500px;
+    margin-left: 30%;
+    padding: 5px;
+    border-color: purple;
+    border-radius: 10px;
+    font-family: 'short stack' , serif;
+    text-align: center;
+  }
+   
+  div {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+  }
+   
+  p {
+    text-align: center;
+    font-family: 'Comic Neue', serif;
+    width: 500px;
+    float: right;
+    margin-right: 5%;
+    background-color: rgb(235, 187, 235);
+    border: 10px;
+  }
+   
+  h2 {
+    width: 500px;
+    height: 80px;
+    text-align: center;
+    font-size: 30px;
+    padding: 5px;
+    font-family: 'Fredoka One', serif;
+    color: rgb(235, 187, 235);
+    float: right;
+    margin-top: 5%;
+    margin-right: 30%;
+  }
+   
+  #img1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 500px;
+    padding: 5px;
+    float: left;
+    margin-left: 9%;
+    margin-top: 5%;
+    background-color: rgb(235, 187, 235);
+    border: 10px;
+    border-radius: 5px;
+  }
+   
+  #img2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 290px;
+    padding: 5px;
+    float: right;
+    margin-right: 5%;
+    margin-top: 25%;
+    background-color: rgb(235, 187, 235);
+    border: 50px;
+    border-radius: 5px;
+  }  
