@@ -11,57 +11,46 @@ get.addEventListener('click', async (_event) => {
   output = selectElement.options[selectElement.selectedIndex].value;
   if (output == 'dead apple') {
     const movieData = await getMovies1();
-    console.log(movieData)
     callMovies(movieData)
   }
   if (output == 'the maze runner') {
     const movieData = await getMovies2();
-    console.log(movieData)
     callMovies(movieData)
   }
   if (output == 'better days') {
     const movieData = await getMovies3();
-    console.log(movieData)
     callMovies(movieData)
   }
   if (output == 'gotf') {
     const movieData = await getMovies4();
-    console.log(movieData)
     callMovies(movieData)
   }
   if (output == '20thcengirl') {
     const movieData = await getMovies5();
-    console.log(movieData)
     callMovies(movieData)
   }
   if (output == 'jtcote') {
     const movieData = await getMovies6();
-    console.log(movieData)
     callMovies(movieData)
   }
   if (output == 'your eyes tell') {
     const movieData = await getMovies7();
-    console.log(movieData)
     callMovies(movieData)
   }
   if (output == 'fairy tail') {
     const movieData = await getMovies8();
-    console.log(movieData)
     callMovies(movieData)
   }
   if (output == 'jurassic park') {
     const movieData = await getMovies9();
-    console.log(movieData)
     callMovies(movieData)
   }
   if (output == 'enola holmes 2') {
     const movieData = await getMovies10();
-    console.log(movieData)
     callMovies(movieData)
   }
 });
 
-// 26ca7d300d9e397095fa7e1435f5eb3d
 
 function callMovies(movieData) {
   document.getElementById('div').innerHTML = "";
