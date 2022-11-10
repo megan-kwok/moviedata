@@ -42,8 +42,8 @@ body {
 /* Styling for innerHTML contents */
 .grid-container > #div > h2 {
   padding: 2%;
-  font-family: 'short stack' , serif;
-  color: rgb(236, 195, 236);
+  font-family: 'titan one' , serif;
+  color:  rgb(88, 44, 86);
   font-size: 35px;
 }
 
