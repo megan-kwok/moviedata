@@ -9,43 +9,43 @@ const getData = async (url, params) => {
 get.addEventListener('click', async (_event) => {
   selectElement = document.querySelector('#Movies');
   output = selectElement.options[selectElement.selectedIndex].value;
-  if (output == 'dead apple') {
+  if (output == '483455') {
     const movieData = await getMovies1();
     callMovies(movieData)
   }
-  if (output == 'the maze runner') {
+  if (output == '198663') {
     const movieData = await getMovies2();
     callMovies(movieData)
   }
-  if (output == 'better days') {
+  if (output == '575813') {
     const movieData = await getMovies3();
     callMovies(movieData)
   }
-  if (output == 'gotf') {
+  if (output == '76826') {
     const movieData = await getMovies4();
     callMovies(movieData)
   }
-  if (output == '20thcengirl') {
+  if (output == '851644') {
     const movieData = await getMovies5();
     callMovies(movieData)
   }
-  if (output == 'jtcote') {
+  if (output == '88751') {
     const movieData = await getMovies6();
     callMovies(movieData)
   }
-  if (output == 'your eyes tell') {
+  if (output == '730154') {
     const movieData = await getMovies7();
     callMovies(movieData)
   }
-  if (output == 'fairy tail') {
+  if (output == '433422') {
     const movieData = await getMovies8();
     callMovies(movieData)
   }
-  if (output == 'jurassic park') {
+  if (output == '329') {
     const movieData = await getMovies9();
     callMovies(movieData)
   }
-  if (output == 'enola holmes 2') {
+  if (output == '497582') {
     const movieData = await getMovies10();
     callMovies(movieData)
   }
@@ -110,7 +110,6 @@ const getMovies1 = async () => {
   const movieData = await getData("https://api.themoviedb.org/3/movie/483455", {
     params: {
       api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-      append_to_response: "videos",
     }
   });
   return movieData.data;
@@ -120,19 +119,14 @@ const getMovies2 = async () => {
   const movieData = await getData("https://api.themoviedb.org/3/movie/198663", {
     params: {
       api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-      query: "the maze runner",
-      append_to_response: "videos",
     }
   });
   return movieData.data;
 }
-
 const getMovies3 = async () => {
   const movieData = await getData("https://api.themoviedb.org/3/movie/575813", {
     params: {
       api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-      query: "better days",
-      append_to_response: "videos",
     }
 
   });
@@ -142,8 +136,6 @@ const getMovies4 = async () => {
   const movieData = await getData("https://api.themoviedb.org/3/movie/76826", {
     params: {
       api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-      query: "gotf",
-      append_to_response: "videos",
     }
 
   });
@@ -153,8 +145,6 @@ const getMovies5 = async () => {
   const movieData = await getData("https://api.themoviedb.org/3/movie/851644", {
     params: {
       api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-      query: "20thcengirl",
-      append_to_response: "videos",
     }
 
   });
@@ -164,8 +154,6 @@ const getMovies6 = async () => {
   const movieData = await getData("https://api.themoviedb.org/3/movie/88751", {
     params: {
       api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-      query: "jtcote",
-      append_to_response: "videos",
     }
 
   });
@@ -175,8 +163,6 @@ const getMovies7 = async () => {
   const movieData = await getData("https://api.themoviedb.org/3/movie/730154", {
     params: {
       api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-      query: "your eyes tell",
-      append_to_response: "videos",
     }
 
   });
@@ -186,8 +172,6 @@ const getMovies8 = async () => {
   const movieData = await getData("https://api.themoviedb.org/3/movie/433422", {
     params: {
       api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-      query: "fairy tail",
-      append_to_response: "videos",
     }
 
   });
@@ -197,8 +181,6 @@ const getMovies9 = async () => {
   const movieData = await getData("https://api.themoviedb.org/3/movie/329", {
     params: {
       api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-      query: "jurassic park",
-      append_to_response: "videos",
     }
 
   });
@@ -208,8 +190,6 @@ const getMovies10 = async () => {
   const movieData = await getData("https://api.themoviedb.org/3/movie/497582", {
     params: {
       api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-      query: "enola holmes 2",
-      append_to_response: "videos",
     }
 
   });
