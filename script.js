@@ -71,7 +71,7 @@ function callMovies(movieData) {
 const getMovies = async (id) => {
   const movieData = await getData(`https://api.themoviedb.org/3/movie/${id}`, {
       params: {
-          api_key: "ab590dbfc1eb546b5263a30c390d2d07",
+          api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
       }
   });
   return movieData.data;
