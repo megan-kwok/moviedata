@@ -8,49 +8,11 @@ const getData = async (url, params) => {
 
 get.addEventListener('click', async (_event) => {
   selectElement = document.querySelector('#Movies');
-  output = selectElement.options[selectElement.selectedIndex].value;
-  if (output == '483455') {
-    const movieData = await getMovies1();
-    callMovies(movieData)
-  }
-  if (output == '198663') {
-    const movieData = await getMovies2();
-    callMovies(movieData)
-  }
-  if (output == '575813') {
-    const movieData = await getMovies3();
-    callMovies(movieData)
-  }
-  if (output == '76826') {
-    const movieData = await getMovies4();
-    callMovies(movieData)
-  }
-  if (output == '851644') {
-    const movieData = await getMovies5();
-    callMovies(movieData)
-  }
-  if (output == '88751') {
-    const movieData = await getMovies6();
-    callMovies(movieData)
-  }
-  if (output == '730154') {
-    const movieData = await getMovies7();
-    callMovies(movieData)
-  }
-  if (output == '433422') {
-    const movieData = await getMovies8();
-    callMovies(movieData)
-  }
-  if (output == '329') {
-    const movieData = await getMovies9();
-    callMovies(movieData)
-  }
-  if (output == '497582') {
-    const movieData = await getMovies10();
-    callMovies(movieData)
-  }
-});
+  id = selectElement.options[selectElement.selectedIndex].value;
 
+  const movieData = await getMovies(id);
+  callMovies(movieData)
+});
 
 function callMovies(movieData) {
   document.getElementById('div').innerHTML = "";
@@ -106,92 +68,11 @@ function callMovies(movieData) {
   document.getElementById('div').appendChild(img2);
 }
 
-const getMovies1 = async () => {
-  const movieData = await getData("https://api.themoviedb.org/3/movie/483455", {
-    params: {
-      api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-    }
-  });
-  return movieData.data;
-}
-
-const getMovies2 = async () => {
-  const movieData = await getData("https://api.themoviedb.org/3/movie/198663", {
-    params: {
-      api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-    }
-  });
-  return movieData.data;
-}
-const getMovies3 = async () => {
-  const movieData = await getData("https://api.themoviedb.org/3/movie/575813", {
-    params: {
-      api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-    }
-
-  });
-  return movieData.data;
-}
-const getMovies4 = async () => {
-  const movieData = await getData("https://api.themoviedb.org/3/movie/76826", {
-    params: {
-      api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-    }
-
-  });
-  return movieData.data;
-}
-const getMovies5 = async () => {
-  const movieData = await getData("https://api.themoviedb.org/3/movie/851644", {
-    params: {
-      api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-    }
-
-  });
-  return movieData.data;
-}
-const getMovies6 = async () => {
-  const movieData = await getData("https://api.themoviedb.org/3/movie/88751", {
-    params: {
-      api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-    }
-
-  });
-  return movieData.data;
-}
-const getMovies7 = async () => {
-  const movieData = await getData("https://api.themoviedb.org/3/movie/730154", {
-    params: {
-      api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-    }
-
-  });
-  return movieData.data;
-}
-const getMovies8 = async () => {
-  const movieData = await getData("https://api.themoviedb.org/3/movie/433422", {
-    params: {
-      api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-    }
-
-  });
-  return movieData.data;
-}
-const getMovies9 = async () => {
-  const movieData = await getData("https://api.themoviedb.org/3/movie/329", {
-    params: {
-      api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-    }
-
-  });
-  return movieData.data;
-}
-const getMovies10 = async () => {
-  const movieData = await getData("https://api.themoviedb.org/3/movie/497582", {
-    params: {
-      api_key: "26ca7d300d9e397095fa7e1435f5eb3d",
-    }
-
+const getMovies = async (id) => {
+  const movieData = await getData(`https://api.themoviedb.org/3/movie/${id}`, {
+      params: {
+          api_key: "ab590dbfc1eb546b5263a30c390d2d07",
+      }
   });
   return movieData.data;
 }
